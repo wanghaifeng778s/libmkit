@@ -1,0 +1,121 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
+//version = "0.1"
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled  true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "KEY", "\"24634617\""
+            buildConfigField "String", "APP_SECRET", "\"adedf24243b6ae4e0e0bee109593d193\""
+        }
+        debug {
+            minifyEnabled  true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "KEY", "\"24634617\""
+            buildConfigField "String", "APP_SECRET", "\"adedf24243b6ae4e0e0bee109593d193\""
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+        compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+        compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+        compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+//    compile files('libs/okhttp-3.3.0.jar')
+//    compile files('libs/retrofit-2.3.0.jar')
+//    compile files('libs/converter-gson-2.0.0-beta4.jar')
+//    compile files('libs/gson-2.4.jar')
+//    compile files('libs/okio-1.9.0.jar')
+}
+//def siteUrl = 'https://github.com/wanghaifeng778s'    // project homepage
+//def gitUrl = 'https://github.com/wanghaifeng778s/libmkit.git' // project git
+//group = "com.haifeng.mkit"                                                          // #CONFIG# // Maven Group ID for the artifact (pageckage name is ok)
+//
+//install {
+//    repositories.mavenInstaller {
+//        // This generates POM.xml with proper parameters
+//        pom {
+//            project {
+//                packaging 'aar'
+//                name 'Mkit New API   For Android'                                   // #CONFIG# // project title
+//                url siteUrl
+//                // Set your license
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'haifeng'                                           // #CONFIG# // your user id (you can write your nickname)
+//                        name 'hai.feng'                                       // #CONFIG# // your user name
+//                        email '1695391081@qq.com'                               // #CONFIG# // your email
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//artifacts {
+//    // archives javadocJar
+//    archives sourcesJar
+//}
+//
+//Properties properties = new Properties()
+//boolean isHasFile = false
+//if (project.rootProject.file('local.properties') != null){
+//    isHasFile = true
+//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//}
+//bintray {
+//    user = isHasFile ? properties.getProperty("bintray.user") : System.getenv("bintray.user")
+//    key = isHasFile ? properties.getProperty("bintray.apikey") : System.getenv("bintray.apikey")
+//    configurations = ['archives']
+//    pkg {
+//        repo = "maven"
+//        name = "libmkit"                                                 // #CONFIG# project name in jcenter
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = ["Apache-2.0"]
+//        publish = true
+//    }
+//}
